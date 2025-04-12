@@ -1,0 +1,17 @@
+[
+    {
+      "icon": "MdPlace",
+      "title": "Find us",
+      "details": "Ranchi,Jharkhand,India"
+    },
+    {
+      "icon": "IoCallSharp",
+      "title": "Call us",
+      "details": "9876500000"
+    },
+    {
+      "icon": "TbMailPlus",
+      "title": "Mail us",
+      "details": "adityapandey.2402@gmail.com"
+    }
+  ]
