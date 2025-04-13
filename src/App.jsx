@@ -6,6 +6,7 @@ import  Country  from "./pages/Country"
 import  Home  from "./pages/Home";
 import AppLayout from "./Layout/AppLayout";
 import ErrorPage from "./pages/ErrorPage";
+import CountryDetails from "./Layout/CountryDetails";
 
 const router= createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router= createBrowserRouter([
     errorElement:<ErrorPage/>,
     children:[
       {
-        path: "/",
+        path: "/home",
         element:<Home/>,
       },
       {
@@ -26,9 +27,17 @@ const router= createBrowserRouter([
         element:<Contact/>,
       },
       {
-        path:"Country",
+        path:"country",
         element:<Country/>,
+      },
+      {
+        path:"country/:id",
+        element:<CountryDetails/>,
       }
+      /**
+       * path:"country/:id", is a dynamic route that will match any URL that starts with /country/ followed by any value. The value after /country/ will be available in the component as a parameter.
+       * For example, if the URL is /country/USA, the value of id will be "USA". You can access this value in the component using the useParams() hook from react-router-dom.
+       */
     ]
   }
 ])
