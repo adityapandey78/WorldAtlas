@@ -31,9 +31,9 @@ const CountryCard = ({country}) => {
                     <span className="card-description">Car Driving Side: </span>
                     {car.side}
                 </p> */}
-                <button>
+                <button className='button'>
                     <NavLink to={`/country/${name.common}`}>
-                    Read More...
+                    <span country-btn-text>Read More...</span>
                     </NavLink>
                     </button>
             </div>

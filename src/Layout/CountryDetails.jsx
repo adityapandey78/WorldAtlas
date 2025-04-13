@@ -1,32 +1,35 @@
-import React, { useEffect,useState } from 'react'
-import { useParams,NavLink } from 'react-router-dom'
-import { getCountryDetails } from '../API/postApi';
-import { useTransition } from 'react';
-import Loader from '../UI/Loader';
+import React, { useEffect, useState } from "react";
+import { useParams, NavLink } from "react-router-dom";
+import { getCountryDetails } from "../API/postApi";
+import { useTransition } from "react";
+import Loader from "../UI/Loader";
 const CountryDetails = () => {
-    /**
-     * Returns an object of key/value pairs of the dynamic params from the current URL that were matched by the routes. Child routes inherit all params from their parent routes.
-     */
-    const params=useParams();
-    console.log("The params are ",params);
-    console.log(" The params id is :",params.id);
+  /**
+   * Returns an object of key/value pairs of the dynamic params from the current URL that were matched by the routes. Child routes inherit all params from their parent routes.
+   */
+  const params = useParams();
+  console.log("The params are ", params);
+  console.log(" The params id is :", params.id);
 
-    const[isPending,startTransition]=useTransition();
-    const [country,setCountry]=useState();
+  const [isPending, startTransition] = useTransition();
+  const [country, setCountry] = useState();
 
-    useEffect(()=>{
-        startTransition(async()=>{
-            const res= await getCountryDetails(params.id);
-            console.log("The result is :",res);
-            if(res.status===200){
-                setCountry(res.data[0]);
-            }
-        })
-    },[])
-    if(isPending) return <Loader/>
+  
+
+  useEffect(() => {
+    startTransition(async () => {
+      const res = await getCountryDetails(params.id);
+      console.log("The result is :", res);
+      if (res.status === 200) {
+        setCountry(res.data[0]);
+      }
+    });
+  }, []);
+  if (isPending) return <Loader />;
   return (
-    
     <section className="card country-details-card container">
+
+        
       <div className="container-card bg-white-box">
         {country && (
           <div className="country-image grid grid-two-cols">
@@ -89,7 +92,7 @@ const CountryDetails = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default CountryDetails
+export default CountryDetails;

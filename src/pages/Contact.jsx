@@ -42,7 +42,7 @@ const Contact = () => {
                     placeholder='Enter your message'
                     className='form-control'
                     required
-                    autoComplete='false'>
+                    autoComplete='off'>
           </textarea>
           <button type='submit' value='send'>Send</button>
         </form>

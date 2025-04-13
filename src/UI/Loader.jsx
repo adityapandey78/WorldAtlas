@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { FaSpinner } from 'react-icons/fa';
 
 const Loader = () => {
-  return (
-    <div>Loading...</div>
-  )
-}
+    return (
+        <div className="loader-container">
+            <div className="loading-icon">
+            <FaSpinner />
+            </div>
+        </div>
+    );
+};
 
-export default Loader
+export default Loader;
