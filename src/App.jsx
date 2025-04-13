@@ -16,7 +16,9 @@ const router= createBrowserRouter([
     children:[
       {
         index: true,
-        element: <Navigate to="/home" replace />,
+        element: <Navigate to="/home" replace />,// Redirect to /home when the user visits the root URL
+        // index: true is used to specify that this route should be rendered when the parent route's path matches exactly.
+        // The index route is a child route of the parent route, which in this case is "/".
       },
       {
         path: "/home",
