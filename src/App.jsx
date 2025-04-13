@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import "./App.css"
 import  About from "./pages/About"
 import Contact  from "./pages/Contact"
@@ -14,6 +14,10 @@ const router= createBrowserRouter([
     element:<AppLayout/>,
     errorElement:<ErrorPage/>,
     children:[
+      {
+        index: true,
+        element: <Navigate to="/home" replace />,
+      },
       {
         path: "/home",
         element:<Home/>,
