@@ -45,6 +45,7 @@ li {
 
 a {
   color: #ffffff;
+  text-decoration: none;
 
   &:hover {
     color: #2e86c1;
@@ -105,13 +106,24 @@ button {
 
 header {
   height: 10rem;
-  box-shadow: rgba(255, 255, 255, 0.3) 0px 10px 10px -10px;
-  background-color: #202020;
+  background-color: #4158D0;
+  background-image: -webkit-linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  background-image: -moz-linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  background-image: -o-linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
   width: 100%;
-
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
+  
   & .container {
     height: 10rem;
   }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .navbar-grid {
@@ -125,11 +137,12 @@ nav ul {
   display: flex;
   justify-content: flex-end;
   /* background-color: yellow; */
-  gap: 3.2rem;
-  color: #fff;
+  gap: 4.2rem;
+  
 
   & li a {
-    color: #fff;
+  color: #000000;
+  font-weight: 800;
   }
 }
 
@@ -184,9 +197,11 @@ nav ul {
     & li:last-child {
       margin-bottom: 1.2rem;
     }
-    & li a{
-      color: #4b4949;
-    }
+    & li a {
+      color: #000000;
+      font-size: 15px;
+      font-weight: 600;
+  }
   }
 }
 
@@ -779,4 +794,91 @@ p{
 }
 .country-btn-text{
   color: #fff!important;
+}
+
+@media (max-width:992px){
+  .searchFilter-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  .sort-container{
+    padding: 0;
+  }
+  .section-searchFilter {
+    & .select-section {
+        background: linear-gradient(71deg, #080509, #1a171c, #080509);
+        color: rgba(255, 255, 255, 0.8);
+        padding: 0.6rem 0.4rem;
+        border-radius: 3rem;
+        -webkit-border-radius: 3rem;
+        -moz-border-radius: 5rem;
+        -ms-border-radius: 5rem;
+        -o-border-radius: 5rem;
+        font-family: "urbanist";
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        text-transform: capitalize;
+    }
+}
+.section-searchFilter {
+  & input {
+      font-family: "urbanist";
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      text-transform: capitalize;
+      color: rgba(255, 255, 255, 0.8);
+      border: 0.05rem solid #fff;
+      background: linear-gradient(71deg, #080509, #1a171c, #080509);
+      padding: 10px;
+      border-radius: 5rem;
+      width: 300px;
+      height: 30px;
+  }
+}
+}
+
+@media (max-width:576px){
+  .country-section {
+    margin: 2.4rem auto 2.6rem auto;
+}
+.country-section {
+  & img {
+      width: 200px;
+      height: auto;
+      object-fit: cover;
+      justify-self: center;
+      align-items: center;
+      
+  }
+}
+.card-container{
+  padding: 5%;
+}
+.country-section {
+  & .grid {
+      gap: 0.2rem;
+      max-width: 132rem;
+      margin: auto;
+      padding: 0% 5%;
+  }
+}
+.countryInfo button a{
+  color: #fff;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  /* background-color: yellow; */
+  gap: 1.2rem;
+  color: #fff;
+
+  & li a {
+    color: #fff;
+  }
+}
 }
